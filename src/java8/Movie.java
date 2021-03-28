@@ -1,6 +1,7 @@
 package java8;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -54,12 +55,24 @@ public class Movie {
 		};
 		list.forEach(System.out::println );
 		
-		Stream streamObj = list.stream().filter(i -> (i > 4));
-		streamObj.map(f);
+		@SuppressWarnings("unchecked")
+		List<Integer> modifiedListObj = (List<Integer>) list.stream().filter(i -> (i > 4)).map(f).collect(Collectors.toList());
 		
-		List<Integer> resultList = (List<Integer>) streamObj;
+		modifiedListObj.forEach(System.out::println);
 		
-		resultList.forEach(i -> System.out.println(i));
+		int result = modifiedListObj.stream().reduce((a,b) -> a < b ? a : b).orElse(0);
+		
+		System.out.println(result);
+		
+		List<Integer> intArr = Arrays.asList(100,99,88,200,300,2,5,4,3,2,1);
+		
+		System.out.println(intArr);
+		Object[] arr = intArr.toArray();
+		Arrays.sort(arr);
+		Arrays.asList(arr).stream().forEach(System.out::println);
+		
+		Collections.sort(list);
+		
  	}
 
 } 

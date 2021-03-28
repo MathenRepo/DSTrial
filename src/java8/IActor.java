@@ -9,7 +9,6 @@ public interface IActor<T> {
 	
 	void dance(); 
 		
-	
 	default void act() {
 		System.out.println("Im Acting Generally");
 	}

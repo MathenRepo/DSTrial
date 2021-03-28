@@ -2,7 +2,12 @@ package java8;
 
 import java.util.LinkedList;
 
-public class LinkedListDemo {
+public abstract class LinkedListDemo {
+	
+	static
+	{
+		System.out.println("Class LinkedListDemo loaded");
+	}
 
 	public static void main(String[] args) {
 
@@ -14,11 +19,14 @@ public class LinkedListDemo {
 		list.add(4);
 		
 		MLinkedList mLinkedList = new MLinkedList();
-		for(Long i = 0L ;i <= Long.parseLong("100") ;i++)
+		for(Long i = 0L ;i <= Long.parseLong("1000") ;i++)
 		{
 			mLinkedList.add(i);
+			System.out.println("added Element " + i);
 		}
 		mLinkedList.add(1000,50);
+		mLinkedList.add(1000,51);
+		mLinkedList.add(1000,52);
 		mLinkedList.displayList();
 	}
 
