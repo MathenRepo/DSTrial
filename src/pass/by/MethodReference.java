@@ -10,8 +10,6 @@ public class MethodReference {
 
 	public static void main(String[] args) {
 
-		int val = 10;
-		
 		List<String> sam = new ArrayList<String>();
 		
 		List<Integer> sam1 = new ArrayList<Integer>();
@@ -22,14 +20,6 @@ public class MethodReference {
 		
 		sam1.forEach(MethodReference::doubleValue); 
 		
-//		Map<String,String> kvSample = new HashMap<String,String>();
-//		kvSample.put("Mathen", "Mathen");
-//		Set<String> ks = (Set<String>) kvSample.keySet();
-//		
-//		ks.forEach(i -> {
-//			System.out.println(i);
-//			System.out.println(kvSample.get(i));
-//		});
 	}
 
 	private static void doubleValue(int i) {
